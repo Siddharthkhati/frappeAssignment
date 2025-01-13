@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:name1",
+ "creation": "2025-01-13 07:39:04.138267",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enable",
+  "name1",
+  "contact_number",
+  "item_details"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:doc.enable",
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "name",
+   "options": "store details",
+   "unique": 1
+  },
+  {
+   "depends_on": "eval:doc.enable",
+   "fetch_from": "name1.contact_number",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable",
+   "fieldtype": "Check",
+   "label": "Verify that you are human by clicking on the box."
+  },
+  {
+   "fieldname": "item_details",
+   "fieldtype": "Table",
+   "label": "Item Details",
+   "options": "products doctype"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-13 08:36:22.668984",
+ "modified_by": "Administrator",
+ "module": "custom_app",
+ "name": "customer details",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
